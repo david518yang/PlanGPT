@@ -1,0 +1,582 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3D8470DC29F738F000044003 /* PlanGPTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470DB29F738F000044003 /* PlanGPTApp.swift */; };
+		3D8470DE29F738F000044003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470DD29F738F000044003 /* ContentView.swift */; };
+		3D8470E029F738F200044003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8470DF29F738F200044003 /* Assets.xcassets */; };
+		3D8470E329F738F200044003 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8470E229F738F200044003 /* Preview Assets.xcassets */; };
+		3D8470ED29F738F200044003 /* PlanGPTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470EC29F738F200044003 /* PlanGPTTests.swift */; };
+		3D8470F729F738F200044003 /* PlanGPTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470F629F738F200044003 /* PlanGPTUITests.swift */; };
+		3D8470F929F738F200044003 /* PlanGPTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470F829F738F200044003 /* PlanGPTUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3D8470E929F738F200044003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D8470D029F738F000044003 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D8470D729F738F000044003;
+			remoteInfo = PlanGPT;
+		};
+		3D8470F329F738F200044003 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3D8470D029F738F000044003 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3D8470D729F738F000044003;
+			remoteInfo = PlanGPT;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		3D8470D829F738F000044003 /* PlanGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D8470DB29F738F000044003 /* PlanGPTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTApp.swift; sourceTree = "<group>"; };
+		3D8470DD29F738F000044003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3D8470DF29F738F200044003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3D8470E229F738F200044003 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3D8470E829F738F200044003 /* PlanGPTTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanGPTTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D8470EC29F738F200044003 /* PlanGPTTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTTests.swift; sourceTree = "<group>"; };
+		3D8470F229F738F200044003 /* PlanGPTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanGPTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D8470F629F738F200044003 /* PlanGPTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTUITests.swift; sourceTree = "<group>"; };
+		3D8470F829F738F200044003 /* PlanGPTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3D8470D529F738F000044003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D8470E529F738F200044003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D8470EF29F738F200044003 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D8470CF29F738F000044003 = {
+			isa = PBXGroup;
+			children = (
+				3D8470DA29F738F000044003 /* PlanGPT */,
+				3D8470EB29F738F200044003 /* PlanGPTTests */,
+				3D8470F529F738F200044003 /* PlanGPTUITests */,
+				3D8470D929F738F000044003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3D8470D929F738F000044003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3D8470D829F738F000044003 /* PlanGPT.app */,
+				3D8470E829F738F200044003 /* PlanGPTTests.xctest */,
+				3D8470F229F738F200044003 /* PlanGPTUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3D8470DA29F738F000044003 /* PlanGPT */ = {
+			isa = PBXGroup;
+			children = (
+				3D8470DB29F738F000044003 /* PlanGPTApp.swift */,
+				3D8470DD29F738F000044003 /* ContentView.swift */,
+				3D8470DF29F738F200044003 /* Assets.xcassets */,
+				3D8470E129F738F200044003 /* Preview Content */,
+			);
+			path = PlanGPT;
+			sourceTree = "<group>";
+		};
+		3D8470E129F738F200044003 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3D8470E229F738F200044003 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		3D8470EB29F738F200044003 /* PlanGPTTests */ = {
+			isa = PBXGroup;
+			children = (
+				3D8470EC29F738F200044003 /* PlanGPTTests.swift */,
+			);
+			path = PlanGPTTests;
+			sourceTree = "<group>";
+		};
+		3D8470F529F738F200044003 /* PlanGPTUITests */ = {
+			isa = PBXGroup;
+			children = (
+				3D8470F629F738F200044003 /* PlanGPTUITests.swift */,
+				3D8470F829F738F200044003 /* PlanGPTUITestsLaunchTests.swift */,
+			);
+			path = PlanGPTUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3D8470D729F738F000044003 /* PlanGPT */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D8470FC29F738F200044003 /* Build configuration list for PBXNativeTarget "PlanGPT" */;
+			buildPhases = (
+				3D8470D429F738F000044003 /* Sources */,
+				3D8470D529F738F000044003 /* Frameworks */,
+				3D8470D629F738F000044003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PlanGPT;
+			productName = PlanGPT;
+			productReference = 3D8470D829F738F000044003 /* PlanGPT.app */;
+			productType = "com.apple.product-type.application";
+		};
+		3D8470E729F738F200044003 /* PlanGPTTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D8470FF29F738F200044003 /* Build configuration list for PBXNativeTarget "PlanGPTTests" */;
+			buildPhases = (
+				3D8470E429F738F200044003 /* Sources */,
+				3D8470E529F738F200044003 /* Frameworks */,
+				3D8470E629F738F200044003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D8470EA29F738F200044003 /* PBXTargetDependency */,
+			);
+			name = PlanGPTTests;
+			productName = PlanGPTTests;
+			productReference = 3D8470E829F738F200044003 /* PlanGPTTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		3D8470F129F738F200044003 /* PlanGPTUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3D84710229F738F200044003 /* Build configuration list for PBXNativeTarget "PlanGPTUITests" */;
+			buildPhases = (
+				3D8470EE29F738F200044003 /* Sources */,
+				3D8470EF29F738F200044003 /* Frameworks */,
+				3D8470F029F738F200044003 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3D8470F429F738F200044003 /* PBXTargetDependency */,
+			);
+			name = PlanGPTUITests;
+			productName = PlanGPTUITests;
+			productReference = 3D8470F229F738F200044003 /* PlanGPTUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3D8470D029F738F000044003 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					3D8470D729F738F000044003 = {
+						CreatedOnToolsVersion = 14.3;
+					};
+					3D8470E729F738F200044003 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 3D8470D729F738F000044003;
+					};
+					3D8470F129F738F200044003 = {
+						CreatedOnToolsVersion = 14.3;
+						TestTargetID = 3D8470D729F738F000044003;
+					};
+				};
+			};
+			buildConfigurationList = 3D8470D329F738F000044003 /* Build configuration list for PBXProject "PlanGPT" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3D8470CF29F738F000044003;
+			productRefGroup = 3D8470D929F738F000044003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3D8470D729F738F000044003 /* PlanGPT */,
+				3D8470E729F738F200044003 /* PlanGPTTests */,
+				3D8470F129F738F200044003 /* PlanGPTUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3D8470D629F738F000044003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D8470E329F738F200044003 /* Preview Assets.xcassets in Resources */,
+				3D8470E029F738F200044003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D8470E629F738F200044003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D8470F029F738F200044003 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3D8470D429F738F000044003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D8470DE29F738F000044003 /* ContentView.swift in Sources */,
+				3D8470DC29F738F000044003 /* PlanGPTApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D8470E429F738F200044003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D8470ED29F738F200044003 /* PlanGPTTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3D8470EE29F738F200044003 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D8470F729F738F200044003 /* PlanGPTUITests.swift in Sources */,
+				3D8470F929F738F200044003 /* PlanGPTUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3D8470EA29F738F200044003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D8470D729F738F000044003 /* PlanGPT */;
+			targetProxy = 3D8470E929F738F200044003 /* PBXContainerItemProxy */;
+		};
+		3D8470F429F738F200044003 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3D8470D729F738F000044003 /* PlanGPT */;
+			targetProxy = 3D8470F329F738F200044003 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3D8470FA29F738F200044003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3D8470FB29F738F200044003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3D8470FD29F738F200044003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PlanGPT/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.lmu.PlanGPT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3D8470FE29F738F200044003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PlanGPT/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.lmu.PlanGPT;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3D84710029F738F200044003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.lmu.PlanGPTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanGPT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PlanGPT";
+			};
+			name = Debug;
+		};
+		3D84710129F738F200044003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.lmu.PlanGPTTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PlanGPT.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/PlanGPT";
+			};
+			name = Release;
+		};
+		3D84710329F738F200044003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.lmu.PlanGPTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PlanGPT;
+			};
+			name = Debug;
+		};
+		3D84710429F738F200044003 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.lmu.PlanGPTUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PlanGPT;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D8470D329F738F000044003 /* Build configuration list for PBXProject "PlanGPT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D8470FA29F738F200044003 /* Debug */,
+				3D8470FB29F738F200044003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D8470FC29F738F200044003 /* Build configuration list for PBXNativeTarget "PlanGPT" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D8470FD29F738F200044003 /* Debug */,
+				3D8470FE29F738F200044003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D8470FF29F738F200044003 /* Build configuration list for PBXNativeTarget "PlanGPTTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D84710029F738F200044003 /* Debug */,
+				3D84710129F738F200044003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3D84710229F738F200044003 /* Build configuration list for PBXNativeTarget "PlanGPTUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D84710329F738F200044003 /* Debug */,
+				3D84710429F738F200044003 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3D8470D029F738F000044003 /* Project object */;
+}
