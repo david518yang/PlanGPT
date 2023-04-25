@@ -14,6 +14,10 @@
 		3D8470ED29F738F200044003 /* PlanGPTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470EC29F738F200044003 /* PlanGPTTests.swift */; };
 		3D8470F729F738F200044003 /* PlanGPTUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470F629F738F200044003 /* PlanGPTUITests.swift */; };
 		3D8470F929F738F200044003 /* PlanGPTUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470F829F738F200044003 /* PlanGPTUITestsLaunchTests.swift */; };
+		8B784FBD29F7A35C005C38B2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B784FBC29F7A35C005C38B2 /* APIService.swift */; };
+		8B784FC029F7A3FF005C38B2 /* ChatCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B784FBF29F7A3FF005C38B2 /* ChatCompletion.swift */; };
+		8B784FC229F7A5B2005C38B2 /* UserInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B784FC129F7A5B2005C38B2 /* UserInput.swift */; };
+		8B784FC429F7B7C8005C38B2 /* PromptResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B784FC329F7B7C8005C38B2 /* PromptResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		3D8470F229F738F200044003 /* PlanGPTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanGPTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8470F629F738F200044003 /* PlanGPTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTUITests.swift; sourceTree = "<group>"; };
 		3D8470F829F738F200044003 /* PlanGPTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8B784FBC29F7A35C005C38B2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		8B784FBF29F7A3FF005C38B2 /* ChatCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletion.swift; sourceTree = "<group>"; };
+		8B784FC129F7A5B2005C38B2 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
+		8B784FC329F7B7C8005C38B2 /* PromptResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,9 @@
 		3D8470DA29F738F000044003 /* PlanGPT */ = {
 			isa = PBXGroup;
 			children = (
+				8B784FBB29F7A332005C38B2 /* Models */,
+				8B784FBA29F7A32D005C38B2 /* Views */,
+				8B784FB929F7A324005C38B2 /* Utils */,
 				3D8470DB29F738F000044003 /* PlanGPTApp.swift */,
 				3D8470DD29F738F000044003 /* ContentView.swift */,
 				3D8470DF29F738F200044003 /* Assets.xcassets */,
@@ -125,6 +136,31 @@
 				3D8470F829F738F200044003 /* PlanGPTUITestsLaunchTests.swift */,
 			);
 			path = PlanGPTUITests;
+			sourceTree = "<group>";
+		};
+		8B784FB929F7A324005C38B2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				8B784FBC29F7A35C005C38B2 /* APIService.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		8B784FBA29F7A32D005C38B2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8B784FC129F7A5B2005C38B2 /* UserInput.swift */,
+				8B784FC329F7B7C8005C38B2 /* PromptResult.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		8B784FBB29F7A332005C38B2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				8B784FBF29F7A3FF005C38B2 /* ChatCompletion.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,7 +293,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8B784FC429F7B7C8005C38B2 /* PromptResult.swift in Sources */,
+				8B784FBD29F7A35C005C38B2 /* APIService.swift in Sources */,
+				8B784FC229F7A5B2005C38B2 /* UserInput.swift in Sources */,
 				3D8470DE29F738F000044003 /* ContentView.swift in Sources */,
+				8B784FC029F7A3FF005C38B2 /* ChatCompletion.swift in Sources */,
 				3D8470DC29F738F000044003 /* PlanGPTApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +464,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -452,6 +493,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

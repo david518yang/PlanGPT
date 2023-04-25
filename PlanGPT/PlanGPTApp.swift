@@ -11,7 +11,7 @@ import SwiftUI
 struct PlanGPTApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            UserInput()
         }
     }
 }
