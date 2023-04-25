@@ -17,7 +17,7 @@ class APIService: ObservableObject {
     private let apiUrl = "https://api.openai.com/v1/chat/completions"
     private let apiKey = "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"
     
-    func getCompletion(prompt: String) async throws -> ChatCompletion {
+    func getCompletion(prompt: String) async throws -> [Day] {
         guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
             throw APIErrors.fetchError
         }
@@ -50,7 +50,10 @@ class APIService: ObservableObject {
         }
         
         let decodedCompletion = try JSONDecoder().decode(ChatCompletion.self, from: data)
+        let content = decodedCompletion.choices[0].message.content
         
-        return decodedCompletion
+        let jsonData = content.data(using: .utf8)!
+        let days: [Day] = try! JSONDecoder().decode([Day].self, from: jsonData)
+        return days
     }
 }
