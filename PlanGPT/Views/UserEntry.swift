@@ -23,16 +23,31 @@ struct UserEntry: View {
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    Image(systemName: "map")
+                        .foregroundColor(.blue)
+                        .font(.system(size:25))
+                    
+                    Text("PlanGPT")
+                        .font(.largeTitle)
+                        .foregroundColor(.blue)
+                        .font(.system(size:25))
+                    
+                    Image(systemName: "fork.knife.circle")
+                        .foregroundColor(.blue)
+                        .font(.system(size:25))
+                }
+                    
                 Form {
                     Section(header: Text("Starting Point")) {
-                        TextField("Starting Point",text:$startPoint)
+                        TextField("Enter starting point",text:$startPoint)
                     }
                     
                     Section(header: Text("End Destination")) {
-                        TextField("End Destination", text:$endDestination)
+                        TextField("Enter end destination", text:$endDestination)
                     }
                     
-                    Section(header: Text("Trip Duration")) {
+                    Section() {
                         Picker("Trip Duration (days)", selection: $duration) {
                             ForEach(1..<8, id: \.self) { num in
                                 Text(num.description).tag(num)
@@ -82,6 +97,9 @@ struct UserEntry: View {
                     }
                 }
             }
+            .background(
+                LinearGradient(gradient: Gradient(colors: [.white, .blue, .black]), startPoint: .top, endPoint: .bottom)
+            )
         }
     }
 }
