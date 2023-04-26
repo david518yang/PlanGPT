@@ -12,9 +12,13 @@ struct PromptResult: View {
     
     var body: some View {
         ForEach(days, id: \.self) { day in
-            Text(day.location)
-            Text(day.food)
-            Text(day.sightseeing)
+            if let dayNum = days.firstIndex(of:day) {
+                Text("Day \(dayNum+1)")
+            }
+            Text("Location: \(day.location)")
+            Text("Food: \(day.food)")
+            Text("Sightseeing: \(day.sightseeing)")
+            Spacer()
         }
     }
 }

@@ -54,7 +54,7 @@ struct UserEntry: View {
                                     return
                                 }
                                 do {
-                                    let completion = try await apiService.getCompletion(prompt: "Plan a \(duration) day(s) long trip day by day from \(startPoint) to \(endDestination). For each day of the trip, find one place for food, and one sightseeing attraction. Store each day in an object only containing food, location, and sightseeing. Return a JSON array of each Day object with no extra spaces.")
+                                    let completion = try await apiService.getCompletion(prompt: "Plan a \(duration) day(s) long trip day by day starting from \(startPoint) and ending at \(endDestination). For each day of the trip, find one place for food, and one sightseeing attraction. Store each day in an object only containing food, location, and sightseeing. Return a JSON array of each Day object with no extra spaces.")
                                     days = completion
                                 } catch APIService.APIErrors.fetchError {
                                     errorMessage = "Error fething data, try again..."
@@ -79,7 +79,7 @@ struct UserEntry: View {
                         }
                         
                         if let days = days {
-                            NavigationLink("Your response is ready! Click to view", destination: PromptResult(days:days))
+                            NavigationLink("Your trip has been planned! Click to view", destination: PromptResult(days:days))
                         }
                     }
                 }
