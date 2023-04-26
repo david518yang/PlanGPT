@@ -39,11 +39,11 @@ struct UserEntry: View {
                     TextField("End Destination", text:$endDestination)
                 }
                 
-                Button("Fetch Completion") {
+                Button("Plan Trip") {
                     Task {
                         isLoading = true // Set loading status
                         do {
-                            let completion = try await apiService.getCompletion(prompt: "Plan me a \(duration) day trip starting from \(startPoint), and ending in \(endDestination)")
+                            let completion = try await apiService.getCompletion(prompt: "Plan a \(duration) day long trip day by day from \(startPoint) to \(endDestination). Store each day in an object containing Food, Location, Sightseeing. Return minified JSON data containing an array of each day object with no extra spaces.")
                             days = completion
                         } catch APIService.APIErrors.fetchError {
                             errorMessage = "Error fething data, try again..."
