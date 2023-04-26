@@ -43,7 +43,7 @@ struct UserEntry: View {
                     Task {
                         isLoading = true // Set loading status
                         do {
-                            let completion = try await apiService.getCompletion(prompt: "Plan a \(duration) day long trip day by day from \(startPoint) to \(endDestination). Store each day of the trip in an object only containing Food, Location, and Sightseeing. Return minified JSON data containing an array of each day object with no extra spaces.")
+                            let completion = try await apiService.getCompletion(prompt: "Plan a \(duration) day long trip day by day from \(startPoint) to \(endDestination). For each day of the trip, find one place for food, and one sightseeing attraction. Store each day in an object only containing food, location, and sightseeing. Return JSON data containing an array of each Day object with no extra spaces.")
                             days = completion
                         } catch APIService.APIErrors.fetchError {
                             errorMessage = "Error fething data, try again..."
