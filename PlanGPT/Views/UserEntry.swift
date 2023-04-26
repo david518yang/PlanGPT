@@ -41,13 +41,10 @@ struct UserEntry: View {
                     }
                     
                     Section(header: Text("Actions")) {
-                        
-                        
-                        
                         Button(action: {
                             Task {
                                 isLoading = true // Set loading status
-                                errorMessage = ""
+                                errorMessage = nil
                                 if startPoint.isEmpty || endDestination.isEmpty {
                                     isLoading = false
                                     errorMessage = "Please specify a start and end location"
@@ -74,6 +71,7 @@ struct UserEntry: View {
                                 Spacer()
                             }
                         }).disabled(isLoading)
+                        
                         if let error = errorMessage {
                             Text(error).foregroundColor(.red)
                         }

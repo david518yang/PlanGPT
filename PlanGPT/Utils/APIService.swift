@@ -19,7 +19,7 @@ class APIService: ObservableObject {
     private let apiKey = "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"
     
     func getCompletion(prompt: String) async throws -> [Day] {
-        guard let url = URL(string: "https://api.openai.com/v1/chat/completions") else {
+        guard let url = URL(string: apiUrl) else {
             throw APIErrors.fetchError
         }
         var urlRequest = URLRequest(url: url)
