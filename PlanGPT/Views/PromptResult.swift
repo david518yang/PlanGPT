@@ -8,15 +8,19 @@
 import SwiftUI
 
 struct PromptResult: View {
-    var text: String = ""
+    var days: [Day]
     
     var body: some View {
-        Text(text)
+        ForEach(days, id: \.self) { day in
+            Text(day.Location)
+            Text(day.Food)
+            Text(day.Sightseeing)
+        }
     }
 }
 
 struct PromptResult_Previews: PreviewProvider {
     static var previews: some View {
-        PromptResult(text: "Test")
+        PromptResult(days: [Day(Food: "f", Location: "l", Sightseeing: "s")])
     }
 }

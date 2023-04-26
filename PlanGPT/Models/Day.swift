@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Day: Codable {
+struct Day: Codable, Hashable {
     let Food: String
     let Location: String
     let Sightseeing: String

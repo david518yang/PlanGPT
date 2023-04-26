@@ -11,6 +11,7 @@ struct UserEntry: View {
     @StateObject var apiService = APIService.shared
     @State var chatCompletion: ChatCompletion?
     @State var errorMessage: String?
+    @State var days: [Day]?
     
     @State private var isLoading: Bool = false
     @State private var prompt: String = ""
@@ -37,37 +38,39 @@ struct UserEntry: View {
                 Section(header: Text("End Destination")) {
                     TextField("End Destination", text:$endDestination)
                 }
+                
+                Button("Fetch Completion") {
+                    Task {
+                        isLoading = true // Set loading status
+                        do {
+                            let completion = try await apiService.getCompletion(prompt: "Plan me a \(duration) day trip starting from \(startPoint), and ending in \(endDestination)")
+                            days = completion
+                        } catch APIService.APIErrors.fetchError {
+                            errorMessage = "Error fething data, try again..."
+                        } catch APIService.APIErrors.decodeError {
+                            errorMessage = "Error decoding data, try again..."
+                        } catch {
+                            errorMessage = "An unknown error occured, try again..."
+                        }
+                        isLoading = false // Reset loading status
+                    }
+                }.buttonStyle(.borderedProminent)
+                
             }
             
-            Button("Fetch Completion") {
-                Task {
-                    isLoading = true // Set loading status
-                    do {
-                        let completion = try await apiService.getCompletion(prompt: prompt)
-                        chatCompletion = completion
-                    } catch APIService.APIErrors.fetchError {
-                        errorMessage = "Error fething data, try again..."
-                    } catch APIService.APIErrors.decodeError {
-                        errorMessage = "Error decoding data, try again..."
-                    } catch {
-                        errorMessage = "An unknown error occured, try again..."
-                    }
-                    isLoading = false // Reset loading status
-                }
-            }.buttonStyle(.borderedProminent)
             
             if isLoading {
                 ProgressView()
             }
             
-            if let completion = chatCompletion {
-                NavigationLink("Your response is ready! Click to view", destination: PromptResult(text: completion.choices[0].message.content))
+            if let completion = days {
+                NavigationLink("Your response is ready! Click to view", destination: PromptResult(days:days!))
             }
             
             if let error = errorMessage {
                 Text(error).foregroundColor(.red)
             }
-        }
+        }.padding()
     }
 }
 
