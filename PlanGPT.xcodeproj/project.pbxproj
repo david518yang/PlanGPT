@@ -50,11 +50,8 @@
 		3D8470F229F738F200044003 /* PlanGPTUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PlanGPTUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8470F629F738F200044003 /* PlanGPTUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTUITests.swift; sourceTree = "<group>"; };
 		3D8470F829F738F200044003 /* PlanGPTUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTUITestsLaunchTests.swift; sourceTree = "<group>"; };
-<<<<<<< Updated upstream
 		8B369CD829F898D20095BCF6 /* Day.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day.swift; sourceTree = "<group>"; };
-=======
 		3D84710529F7C4EF00044003 /* UserEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntry.swift; sourceTree = "<group>"; };
->>>>>>> Stashed changes
 		8B784FBC29F7A35C005C38B2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8B784FBF29F7A3FF005C38B2 /* ChatCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletion.swift; sourceTree = "<group>"; };
 		8B784FC129F7A5B2005C38B2 /* UserInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInput.swift; sourceTree = "<group>"; };
