@@ -51,7 +51,7 @@ class APIService: ObservableObject {
         
         let decodedCompletion = try JSONDecoder().decode(ChatCompletion.self, from: data)
         let content = decodedCompletion.choices[0].message.content
-        
+        print(content)
         let jsonData = content.data(using: .utf8)!
         let days: [Day] = try! JSONDecoder().decode([Day].self, from: jsonData)
         return days

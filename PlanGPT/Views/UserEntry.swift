@@ -29,8 +29,8 @@ struct UserEntry: View {
                 
                 Section(header: Text("Trip Duration")) {
                     Picker("Trip Duration (days)", selection: $duration) {
-                        ForEach(1..<7, id: \.self) { num in
-                            Text(num.description)
+                        ForEach(1..<8, id: \.self) { num in
+                            Text(num.description).tag(num)
                         }
                     }
                 }
@@ -43,7 +43,7 @@ struct UserEntry: View {
                     Task {
                         isLoading = true // Set loading status
                         do {
-                            let completion = try await apiService.getCompletion(prompt: "Plan a \(duration) day long trip day by day from \(startPoint) to \(endDestination). Store each day in an object containing Food, Location, Sightseeing. Return minified JSON data containing an array of each day object with no extra spaces.")
+                            let completion = try await apiService.getCompletion(prompt: "Plan a \(duration) day long trip day by day from \(startPoint) to \(endDestination). Store each day of the trip in an object only containing Food, Location, and Sightseeing. Return minified JSON data containing an array of each day object with no extra spaces.")
                             days = completion
                         } catch APIService.APIErrors.fetchError {
                             errorMessage = "Error fething data, try again..."
@@ -63,7 +63,7 @@ struct UserEntry: View {
                 ProgressView()
             }
             
-            if let completion = days {
+            if days != nil {
                 NavigationLink("Your response is ready! Click to view", destination: PromptResult(days:days!))
             }
             

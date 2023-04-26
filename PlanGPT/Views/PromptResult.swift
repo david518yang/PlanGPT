@@ -12,15 +12,15 @@ struct PromptResult: View {
     
     var body: some View {
         ForEach(days, id: \.self) { day in
-            Text(day.Location)
-            Text(day.Food)
-            Text(day.Sightseeing)
+            Text(day.location)
+            Text(day.food)
+            Text(day.sightseeing)
         }
     }
 }
 
 struct PromptResult_Previews: PreviewProvider {
     static var previews: some View {
-        PromptResult(days: [Day(Food: "f", Location: "l", Sightseeing: "s")])
+        PromptResult(days: [Day(food: "f", location: "l", sightseeing: "s")])
     }
 }
