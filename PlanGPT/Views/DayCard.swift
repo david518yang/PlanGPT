@@ -47,6 +47,6 @@ struct DayCard: View {
 
 struct DayCard_Previews: PreviewProvider {
     static var previews: some View {
-        DayCard(day: Day(food: "Dinner at In-N-Out Burger", location: "Los Angeles, CA", sightseeing: "Hollywood Walk of Fame"), index: 1)
+        DayCard(day: Day(day:0,food: "Dinner at In-N-Out Burger", location: "Los Angeles, CA", sightseeing: "Hollywood Walk of Fame"), index: 1)
     }
 }

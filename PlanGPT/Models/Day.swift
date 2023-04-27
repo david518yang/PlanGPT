@@ -8,6 +8,7 @@
 import Foundation
 
 struct Day: Codable, Hashable {
+    let day: Int?
     let food: String
     let location: String
     let sightseeing: String
