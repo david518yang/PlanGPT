@@ -7,10 +7,15 @@
 
 import SwiftUI
 
-struct Account: View {
+struct Account: View {    
     var body: some View {
         NavigationView {
             VStack {
+                if let userData = UserDefaults.standard.data(forKey: "currentUser"),
+                   let user = try? JSONDecoder().decode(User.self, from: userData) {
+                    Text(user.displayName ?? "No display name found")
+                    Text(user.email ?? "No email found")
+                }
                 Button(action: FirebaseAuth.shared.signOut) {
                     Text("Sign Out")
                 }
