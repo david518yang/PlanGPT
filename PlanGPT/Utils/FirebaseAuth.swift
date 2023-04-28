@@ -40,10 +40,21 @@ struct FirebaseAuth {
                                                            accessToken: user.accessToken.tokenString)
             
             Auth.auth().signIn(with: credential) { result, error in
-                
+            
                 guard error == nil else {
                     completion(error)
                     return
+                }
+                
+                guard let result = result else { return }
+                
+                let user = User(uid: result.user.uid,
+                                email: result.user.email,
+                                displayName: result.user.displayName)
+
+                let encoder = JSONEncoder()
+                if let encoded = try? encoder.encode(user) {
+                    UserDefaults.standard.set(encoded, forKey: "currentUser")
                 }
                 
                 UserDefaults.standard.set(true, forKey: "signedIn")
@@ -60,6 +71,7 @@ struct FirebaseAuth {
         try Auth.auth().signOut()
         
         UserDefaults.standard.set(false, forKey: "signedIn")
+        UserDefaults.standard.removeObject(forKey: "currentUser") // Remove user data
       } catch {
         print(error.localizedDescription)
       }

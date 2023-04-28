@@ -34,6 +34,7 @@
 		8B784FBD29F7A35C005C38B2 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B784FBC29F7A35C005C38B2 /* APIService.swift */; };
 		8B784FC029F7A3FF005C38B2 /* ChatCompletion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B784FBF29F7A3FF005C38B2 /* ChatCompletion.swift */; };
 		8B784FC429F7B7C8005C38B2 /* PromptResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B784FC329F7B7C8005C38B2 /* PromptResult.swift */; };
+		8B7E4C5F29FB3DD800B45B0A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B7E4C5E29FB3DD800B45B0A /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		8B784FBC29F7A35C005C38B2 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		8B784FBF29F7A3FF005C38B2 /* ChatCompletion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCompletion.swift; sourceTree = "<group>"; };
 		8B784FC329F7B7C8005C38B2 /* PromptResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptResult.swift; sourceTree = "<group>"; };
+		8B7E4C5E29FB3DD800B45B0A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,7 +117,6 @@
 		3D8470CF29F738F000044003 = {
 			isa = PBXGroup;
 			children = (
-				8B5B40A229F9E5DC003722AE /* GoogleService-Info.plist */,
 				3D8470DA29F738F000044003 /* PlanGPT */,
 				3D8470EB29F738F200044003 /* PlanGPTTests */,
 				3D8470F529F738F200044003 /* PlanGPTUITests */,
@@ -138,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8B5B40B129F9E8B7003722AE /* Info.plist */,
+				8B5B40A229F9E5DC003722AE /* GoogleService-Info.plist */,
 				8B784FBB29F7A332005C38B2 /* Models */,
 				8B784FBA29F7A32D005C38B2 /* Views */,
 				8B784FB929F7A324005C38B2 /* Utils */,
@@ -213,6 +215,7 @@
 				8B784FBF29F7A3FF005C38B2 /* ChatCompletion.swift */,
 				8B369CD829F898D20095BCF6 /* Day.swift */,
 				3D81526E29FB3F2E0068D968 /* Trip.swift */,
+				8B7E4C5E29FB3DD800B45B0A /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -362,6 +365,7 @@
 				8B5B40C229FA0801003722AE /* Account.swift in Sources */,
 				8B5B40BE29F9EECE003722AE /* ViewExtensions.swift in Sources */,
 				8B5B40C629FA1084003722AE /* DayCard.swift in Sources */,
+				8B7E4C5F29FB3DD800B45B0A /* User.swift in Sources */,
 				8B369CD929F898D20095BCF6 /* Day.swift in Sources */,
 				8B5B40BC29F9EE3B003722AE /* Login.swift in Sources */,
 				8B784FC429F7B7C8005C38B2 /* PromptResult.swift in Sources */,
