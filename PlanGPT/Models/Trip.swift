@@ -11,4 +11,5 @@ struct Trip: Codable, Hashable, Identifiable {
     let id: String
     let title: String
     let days: [Day]
+    let userId: String
 }

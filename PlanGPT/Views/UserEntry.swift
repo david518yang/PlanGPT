@@ -91,7 +91,7 @@ struct UserEntry: View {
                         
                         if let days = days {
                             if !isLoading {
-                                NavigationLink("Click here to view your trip", destination: PromptResult(days:days))
+                                NavigationLink("Click here to view your trip", destination: PromptResult(days:days, showButton: true))
                             }
                         }
                     }

@@ -8,16 +8,42 @@
 import SwiftUI
 
 struct MyTrips: View {
-    var trips: [Trip]
+    
+    @State var userId: String = ""
+    @State var trips: [Trip] = []
+    @State var fetching: Bool = false
+    @EnvironmentObject var tripService: PlanGPTTrip
     
     var body: some View {
         NavigationView {
-            ScrollView{
-                trips.forEach() { trip in
-                    
+            VStack {
+                if fetching {
+                    ProgressView()
+                } else if trips.count == 0 {
+                    Text("You have no trips saved")
+                } else {
+                    List(trips) { trip in
+                        NavigationLink {
+                            PromptResult(days: trip.days, showButton: false)
+                        } label: {
+                            Text(trip.title)
+                        }
+                    }
+                }
+            }.task {
+                fetching = true
+                do {
+                    trips = try await tripService.fetchTrips(userId: userId)
+                    fetching = false
+                } catch {
+                    fetching = false
+                }
+            }.onAppear {
+                if let userData = UserDefaults.standard.data(forKey: "currentUser"),
+                   let user = try? JSONDecoder().decode(User.self, from: userData) {
+                    userId = user.uid
                 }
             }
-            .navigationBarTitle("My Trips", displayMode: .inline)
         }
     }
 }

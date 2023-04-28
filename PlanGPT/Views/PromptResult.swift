@@ -13,35 +13,48 @@ struct PromptResult: View {
     var days: [Day]
     @State var title = ""
     @State private var presentAlert = false
-    
+    var showButton: Bool
     
     var body: some View {
         ScrollView {
             VStack {
                 HStack{
+                    Text("Your Trip")
+                        .font(.title)
+                        .fontWeight(.bold)
                     Spacer()
-                    Button {
-                        presentAlert = true
-                    }label: {
-                        Image(systemName: "bookmark")
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width:20)
+                    if (showButton) {
+                        if let userData = UserDefaults.standard.data(forKey: "currentUser"),
+                           let user = try? JSONDecoder().decode(User.self, from: userData) {
+                            Button {
+                                presentAlert = true
+                            }label: {
+                                HStack {
+                                    Text("Save Trip")
+                                        .foregroundColor(.blue)
+                                    Image(systemName: "bookmark")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width:20)
+                                }
+                            }
+                            .alert("Save Trip", isPresented: $presentAlert, actions: {
+                                TextField("Enter a title for your trip", text: $title)
+                                
+                                Button("Save", action: {
+                                    tripService.createTrip(trip: Trip(
+                                        id: UUID().uuidString,
+                                        title: title,
+                                        days: days,
+                                        userId: user.uid
+                                    ))
+                                })
+                                Button("Cancel", role: .cancel, action: {})
+                            }, message: {
+                                Text("Please enter a title for your trip")
+                            })
+                        }
                     }
-                    .alert("Save Trip", isPresented: $presentAlert, actions: {
-                        TextField("Enter a title for your trip", text: $title)
-                        
-                        Button("Save", action: {
-                            tripService.createTrip(trip: Trip(
-                                id: UUID().uuidString,
-                                title: title,
-                                days: days
-                            ))
-                        })
-                        Button("Cancel", role: .cancel, action: {})
-                    }, message: {
-                        Text("Please enter a title for your trip")
-                    })
                 }.padding()
                 ForEach(days, id: \.self) { day in
                     if let dayNum = days.firstIndex(of:day) {
@@ -57,6 +70,6 @@ struct PromptResult: View {
 
 struct PromptResult_Previews: PreviewProvider {
     static var previews: some View {
-        PromptResult(days: [Day(day:1,food: "Dinner at In-N-Out Burger", location: "Los Angeles, CA", sightseeing: "Hollywood Walk of Fame")])
+        PromptResult(days: [Day(day:1,food: "Dinner at In-N-Out Burger", location: "Los Angeles, CA", sightseeing: "Hollywood Walk of Fame")], showButton: true)
     }
 }

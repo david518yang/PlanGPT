@@ -18,14 +18,14 @@ enum TripServiceError: Error {
 
 class PlanGPTTrip: ObservableObject {
     private let db = Firestore.firestore()
-
+    
     @Published var error: Error?
-
-    func createTrip(trip: Trip) -> String {
-        var ref: DocumentReference? = nil
-        var days: [Day] = trip.days
-        ref = db.collection(COLLECTION_NAME).addDocument(data: [
+    
+    func createTrip(trip: Trip) {
+        let days: [Day] = trip.days
+        db.collection(COLLECTION_NAME).addDocument(data: [
             "title": trip.title,
+            "userId": trip.userId,
             "days": days.map { day in
                 return ["food": day.food,
                         "location":day.location,
@@ -36,26 +36,30 @@ class PlanGPTTrip: ObservableObject {
                 self.error = actualError
             }
         }
-        return ref?.documentID ?? ""
     }
-
-    func fetchTrips() async throws -> [Trip] {
-        let articleQuery = db.collection(COLLECTION_NAME)
-            .order(by: "date", descending: true)
+    
+    func fetchTrips(userId: String) async throws -> [Trip] {
+        let tripQuery = db.collection(COLLECTION_NAME)
             .limit(to: PAGE_LIMIT)
-
-        let querySnapshot = try await articleQuery.getDocuments()
-
+            .whereField("userId", isEqualTo: userId)
+                
+        let querySnapshot = try await tripQuery.getDocuments()
+        
         return try querySnapshot.documents.map {
             guard let title = $0.get("title") as? String,
-                  let days = $0.get("days") as? [Day] else {
+                  let days = $0.get("days") as? [[String:String]] else {
                 throw TripServiceError.mismatchedDocumentError
             }
             
+            let daysArray = days.map { dayDictionary in
+                return Day(day: 1, food: dayDictionary["food"] ?? "", location: dayDictionary["location"] ?? "", sightseeing: dayDictionary["sightseeing"] ?? "")
+            }
+                        
             return Trip(
                 id: $0.documentID,
                 title: title,
-                days: days
+                days: daysArray,
+                userId: userId
             )
         }
     }
