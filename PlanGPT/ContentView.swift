@@ -8,14 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @AppStorage("signedIn") var signedIn = false
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        if !signedIn {
+            Login()
+        } else {
+            TabView {
+                UserEntry()
+                    .tabItem {
+                        Label("Plan", systemImage: "map")
+                    }
+                MyTrips()
+                    .tabItem {
+                        Label("My Trips", systemImage: "list.bullet.clipboard.fill")
+                    }
+                Account()
+                    .tabItem {
+                        Label("Account", systemImage: "person.crop.circle")
+                    }
+            }
         }
-        .padding()
+        
     }
 }
 

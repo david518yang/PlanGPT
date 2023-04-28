@@ -8,10 +8,14 @@
 import SwiftUI
 
 struct MyTrips: View {
+    var trips: [Trip]
+    
     var body: some View {
         NavigationView {
-            VStack {
-                Text("Your trips will appear here")
+            ScrollView{
+                trips.forEach() { trip in
+                    
+                }
             }
             .navigationBarTitle("My Trips", displayMode: .inline)
         }

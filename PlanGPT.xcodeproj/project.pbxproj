@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3D81526D29FB387E0068D968 /* PlanGPTTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81526C29FB387E0068D968 /* PlanGPTTrip.swift */; };
+		3D81526F29FB3F2E0068D968 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81526E29FB3F2E0068D968 /* Trip.swift */; };
+		3D81527129FB437F0068D968 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3D81527029FB437F0068D968 /* FirebaseFirestore */; };
 		3D8470DC29F738F000044003 /* PlanGPTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470DB29F738F000044003 /* PlanGPTApp.swift */; };
 		3D8470DE29F738F000044003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470DD29F738F000044003 /* ContentView.swift */; };
 		3D8470E029F738F200044003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8470DF29F738F200044003 /* Assets.xcassets */; };
@@ -51,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3D81526C29FB387E0068D968 /* PlanGPTTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTTrip.swift; sourceTree = "<group>"; };
+		3D81526E29FB3F2E0068D968 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
 		3D8470D829F738F000044003 /* PlanGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8470DB29F738F000044003 /* PlanGPTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTApp.swift; sourceTree = "<group>"; };
 		3D8470DD29F738F000044003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,6 +89,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8B5B40B629F9E94B003722AE /* GoogleSignInSwift in Frameworks */,
+				3D81527129FB437F0068D968 /* FirebaseFirestore in Frameworks */,
 				8B5B40A829F9E660003722AE /* FirebaseAuth in Frameworks */,
 				8B5B40AB29F9E698003722AE /* GoogleSignIn in Frameworks */,
 			);
@@ -182,6 +188,7 @@
 				8B5B40B929F9ED38003722AE /* AppDelegate.swift */,
 				8B5B40BD29F9EECE003722AE /* ViewExtensions.swift */,
 				8B5B40BF29F9F2CB003722AE /* FirebaseAuth.swift */,
+				3D81526C29FB387E0068D968 /* PlanGPTTrip.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -205,6 +212,7 @@
 			children = (
 				8B784FBF29F7A3FF005C38B2 /* ChatCompletion.swift */,
 				8B369CD829F898D20095BCF6 /* Day.swift */,
+				3D81526E29FB3F2E0068D968 /* Trip.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,6 +237,7 @@
 				8B5B40A729F9E660003722AE /* FirebaseAuth */,
 				8B5B40AA29F9E698003722AE /* GoogleSignIn */,
 				8B5B40B529F9E94B003722AE /* GoogleSignInSwift */,
+				3D81527029FB437F0068D968 /* FirebaseFirestore */,
 			);
 			productName = PlanGPT;
 			productReference = 3D8470D829F738F000044003 /* PlanGPT.app */;
@@ -364,6 +373,8 @@
 				3D84710629F7C4EF00044003 /* UserEntry.swift in Sources */,
 				8B5B40BA29F9ED38003722AE /* AppDelegate.swift in Sources */,
 				3D8470DC29F738F000044003 /* PlanGPTApp.swift in Sources */,
+				3D81526F29FB3F2E0068D968 /* Trip.swift in Sources */,
+				3D81526D29FB387E0068D968 /* PlanGPTTrip.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -707,6 +718,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		3D81527029FB437F0068D968 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8B5B40A629F9E660003722AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
+		};
 		8B5B40A729F9E660003722AE /* FirebaseAuth */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 8B5B40A629F9E660003722AE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
