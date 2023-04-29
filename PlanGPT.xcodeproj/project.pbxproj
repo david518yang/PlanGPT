@@ -10,6 +10,7 @@
 		3D81526D29FB387E0068D968 /* PlanGPTTrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81526C29FB387E0068D968 /* PlanGPTTrip.swift */; };
 		3D81526F29FB3F2E0068D968 /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81526E29FB3F2E0068D968 /* Trip.swift */; };
 		3D81527129FB437F0068D968 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 3D81527029FB437F0068D968 /* FirebaseFirestore */; };
+		3D81527329FDBC210068D968 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D81527229FDBC210068D968 /* MapView.swift */; };
 		3D8470DC29F738F000044003 /* PlanGPTApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470DB29F738F000044003 /* PlanGPTApp.swift */; };
 		3D8470DE29F738F000044003 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D8470DD29F738F000044003 /* ContentView.swift */; };
 		3D8470E029F738F200044003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3D8470DF29F738F200044003 /* Assets.xcassets */; };
@@ -57,6 +58,7 @@
 /* Begin PBXFileReference section */
 		3D81526C29FB387E0068D968 /* PlanGPTTrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTTrip.swift; sourceTree = "<group>"; };
 		3D81526E29FB3F2E0068D968 /* Trip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		3D81527229FDBC210068D968 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		3D8470D829F738F000044003 /* PlanGPT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PlanGPT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D8470DB29F738F000044003 /* PlanGPTApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlanGPTApp.swift; sourceTree = "<group>"; };
 		3D8470DD29F738F000044003 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 				8B5B40C129FA0801003722AE /* Account.swift */,
 				8B5B40C329FA0E0A003722AE /* MyTrips.swift */,
 				8B5B40C529FA1084003722AE /* DayCard.swift */,
+				3D81527229FDBC210068D968 /* MapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				8B5B40C429FA0E0A003722AE /* MyTrips.swift in Sources */,
 				3D84710629F7C4EF00044003 /* UserEntry.swift in Sources */,
 				8B5B40BA29F9ED38003722AE /* AppDelegate.swift in Sources */,
+				3D81527329FDBC210068D968 /* MapView.swift in Sources */,
 				3D8470DC29F738F000044003 /* PlanGPTApp.swift in Sources */,
 				3D81526F29FB3F2E0068D968 /* Trip.swift in Sources */,
 				3D81526D29FB387E0068D968 /* PlanGPTTrip.swift in Sources */,

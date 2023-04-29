@@ -12,5 +12,6 @@ struct Day: Codable, Hashable {
     let food: String
     let location: String
     let sightseeing: String
-    let coords: [Int]?
+    let latitude: Double
+    let longitude: Double
 }

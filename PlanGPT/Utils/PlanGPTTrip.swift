@@ -29,7 +29,9 @@ class PlanGPTTrip: ObservableObject {
             "days": days.map { day in
                 return ["food": day.food,
                         "location":day.location,
-                        "sightseeing":day.sightseeing]
+                        "sightseeing":day.sightseeing,
+                        "latitude":day.latitude,
+                        "longitude": day.longitude]
             }
         ]) { possibleError in
             if let actualError = possibleError {
@@ -52,8 +54,13 @@ class PlanGPTTrip: ObservableObject {
             }
             
             let daysArray = days.map { dayDictionary in
-                return Day(day: 1, food: dayDictionary["food"] ?? "", location: dayDictionary["location"] ?? "", sightseeing: dayDictionary["sightseeing"] ?? "", coords: [1,2])
+                let latitude = Double(dayDictionary["latitude"] ?? "")
+                let longitude = Double(dayDictionary["longitude"] ?? "")
+                
+                return Day(day: 1, food: dayDictionary["food"] ?? "", location: dayDictionary["location"] ?? "", sightseeing: dayDictionary["sightseeing"] ?? "", latitude: latitude ?? 0.0, longitude: longitude ?? 0.0)
             }
+            
+            print(daysArray)
                         
             return Trip(
                 id: $0.documentID,

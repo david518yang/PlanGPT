@@ -67,7 +67,7 @@ struct UserEntry: View {
                                     return
                                 }
                                 do {
-                                    let completion = try await apiService.getCompletion(prompt: "Plan a road trip day by day starting from \(startPoint) with stops along the way eventually ending in \(endDestination). There must be exactly \(duration) days and locations must be in geographical order. For each day of the trip, find one notable restaurant in the location, and one sightseeing attraction. For each day, follow this structure: { food: String, location: String, sightseeing: String, coords: [Int] } Return only a JSON array of each Day object with no extra spaces.")
+                                    let completion = try await apiService.getCompletion(prompt: "Give me a list of exactly \(duration) location(s). \(startPoint) must be the first item on the list, and \(endDestination) must be the last. The rest of the locations in this list must be locations on the general path starting from \(startPoint) and ending at \(endDestination), and the distance between the locations picked must be similar. For each location, find one notable restaurant around the location, and one sightseeing attraction. For each day, follow this structure: { food: String, location: String, sightseeing: String, latitude: Double, longitude: Double } Return only a JSON array of each Day object with no extra spaces.")
                                     days = completion
                                 } catch APIService.APIErrors.fetchError {
                                     errorMessage = "Error fething data, try again..."

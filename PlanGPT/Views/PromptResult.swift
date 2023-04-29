@@ -16,46 +16,47 @@ struct PromptResult: View {
     var showButton: Bool
     
     var body: some View {
-        ScrollView {
-            VStack {
-                HStack{
-                    Text("Your Trip")
-                        .font(.title)
-                        .fontWeight(.bold)
-                    Spacer()
-                    if (showButton) {
-                        if let userData = UserDefaults.standard.data(forKey: "currentUser"),
-                           let user = try? JSONDecoder().decode(User.self, from: userData) {
-                            Button {
-                                presentAlert = true
-                            }label: {
-                                HStack {
-                                    Text("Save Trip")
-                                        .foregroundColor(.blue)
-                                    Image(systemName: "bookmark")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fit)
-                                        .frame(width:20)
-                                }
+        VStack {
+            HStack{
+                Text("Your Trip")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Spacer()
+                if (showButton) {
+                    if let userData = UserDefaults.standard.data(forKey: "currentUser"),
+                       let user = try? JSONDecoder().decode(User.self, from: userData) {
+                        Button {
+                            presentAlert = true
+                        }label: {
+                            HStack {
+                                Text("Save Trip")
+                                    .foregroundColor(.blue)
+                                Image(systemName: "bookmark")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fit)
+                                    .frame(width:20)
                             }
-                            .alert("Save Trip", isPresented: $presentAlert, actions: {
-                                TextField("Enter a title for your trip", text: $title)
-                                
-                                Button("Save", action: {
-                                    tripService.createTrip(trip: Trip(
-                                        id: UUID().uuidString,
-                                        title: title,
-                                        days: days,
-                                        userId: user.uid
-                                    ))
-                                })
-                                Button("Cancel", role: .cancel, action: {})
-                            }, message: {
-                                Text("Please enter a title for your trip")
-                            })
                         }
+                        .alert("Save Trip", isPresented: $presentAlert, actions: {
+                            TextField("Enter a title for your trip", text: $title)
+                            
+                            Button("Save", action: {
+                                tripService.createTrip(trip: Trip(
+                                    id: UUID().uuidString,
+                                    title: title,
+                                    days: days,
+                                    userId: user.uid
+                                ))
+                            })
+                            Button("Cancel", role: .cancel, action: {})
+                        }, message: {
+                            Text("Please enter a title for your trip")
+                        })
                     }
-                }.padding()
+                }
+            }.padding()
+            MapView(days: days)
+            ScrollView {
                 ForEach(days, id: \.self) { day in
                     if let dayNum = days.firstIndex(of:day) {
                         DayCard(day: day, index: dayNum+1)
@@ -63,13 +64,19 @@ struct PromptResult: View {
                     Spacer()
                 }
             }
+            Spacer()
         }
-        
     }
 }
 
 struct PromptResult_Previews: PreviewProvider {
     static var previews: some View {
-        PromptResult(days: [Day(day:1,food: "Dinner at In-N-Out Burger", location: "Los Angeles, CA", sightseeing: "Hollywood Walk of Fame", coords: [1,2])], showButton: true)
+        PromptResult(days: [Day(
+            day:1,
+            food: "Dinner at In-N-Out Burger",
+            location: "Los Angeles, CA",
+            sightseeing: "Hollywood Walk of Fame",
+            latitude: 34.1017,
+            longitude: 118.3403)], showButton: true)
     }
 }
