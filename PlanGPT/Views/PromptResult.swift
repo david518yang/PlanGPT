@@ -70,6 +70,6 @@ struct PromptResult: View {
 
 struct PromptResult_Previews: PreviewProvider {
     static var previews: some View {
-        PromptResult(days: [Day(day:1,food: "Dinner at In-N-Out Burger", location: "Los Angeles, CA", sightseeing: "Hollywood Walk of Fame")], showButton: true)
+        PromptResult(days: [Day(day:1,food: "Dinner at In-N-Out Burger", location: "Los Angeles, CA", sightseeing: "Hollywood Walk of Fame", coords: [1,2])], showButton: true)
     }
 }

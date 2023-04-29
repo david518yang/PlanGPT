@@ -52,7 +52,7 @@ class PlanGPTTrip: ObservableObject {
             }
             
             let daysArray = days.map { dayDictionary in
-                return Day(day: 1, food: dayDictionary["food"] ?? "", location: dayDictionary["location"] ?? "", sightseeing: dayDictionary["sightseeing"] ?? "")
+                return Day(day: 1, food: dayDictionary["food"] ?? "", location: dayDictionary["location"] ?? "", sightseeing: dayDictionary["sightseeing"] ?? "", coords: [1,2])
             }
                         
             return Trip(
