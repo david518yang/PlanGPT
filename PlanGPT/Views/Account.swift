@@ -9,8 +9,11 @@ import SwiftUI
 
 struct Account: View {    
     var body: some View {
-        NavigationView {
-            VStack {
+        VStack (spacing: 20) {
+                Text("Account")
+                    .font(.title)
+                    .fontWeight(.bold)
+                Spacer()
                 if let userData = UserDefaults.standard.data(forKey: "currentUser"),
                    let user = try? JSONDecoder().decode(User.self, from: userData) {
                     Text(user.displayName ?? "No display name found")
@@ -19,9 +22,8 @@ struct Account: View {
                 Button(action: FirebaseAuth.shared.signOut) {
                     Text("Sign Out")
                 }
+                Spacer()
             }
-            .navigationBarTitle("Account", displayMode: .inline)
-        }
     }
 }
 

@@ -22,6 +22,9 @@ struct MyTrips: View {
                 } else if trips.count == 0 {
                     Text("You have no trips saved")
                 } else {
+                    Text("My Trips")
+                        .font(.title)
+                        .fontWeight(.bold)
                     List(trips) { trip in
                         NavigationLink {
                             PromptResult(days: trip.days, showButton: false)
