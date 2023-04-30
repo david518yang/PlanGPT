@@ -6,7 +6,7 @@
 
 ## Step 2: Identify needs for your audience
 
-`planning, finding flights, finding food, finding accomodation, knowing what places to see, creating an itinerary, transport, coordinating with other travelers`
+`planning, finding flights, finding food, finding accomodation, knowing what places to see, creating an itinerary, transport, coordinating with other travelers, finding fun things to do, exploring new places`
 
 ## Step 3: Map needs to Projects
 
