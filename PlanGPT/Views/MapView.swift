@@ -53,14 +53,27 @@ struct MapView: View {
         }
             .frame(height: 200)
             .onAppear {
+                var latitudeRange: Double
+                var longitudeRange: Double
                 let latitudeArray = days.map { day in
                     return day.latitude
                 }
                 let longitudeArray = days.map { day in
                     return day.longitude
                 }
-                mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitudeArray.reduce(0, +)/Double(latitudeArray.count), longitude: longitudeArray.reduce(0, +)/Double(longitudeArray.count)), span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30))
+                
+                if let latitudeMax = latitudeArray.max(), let latitudeMin = latitudeArray.min() {
+                    latitudeRange = latitudeMax - latitudeMin
+                    
+                    if let longitudeMax = longitudeArray.max(), let longitudeMin = longitudeArray.min() {
+                        longitudeRange = longitudeMax - longitudeMin
+                        
+                        mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitudeArray.reduce(0, +)/Double(latitudeArray.count), longitude: longitudeArray.reduce(0, +)/Double(longitudeArray.count)), span: MKCoordinateSpan(latitudeDelta: latitudeRange+5, longitudeDelta: longitudeRange+5))
+                        }
+                    }
                 }
+                
+                
     }
 }
 

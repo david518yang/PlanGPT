@@ -41,7 +41,7 @@ struct PromptResult: View {
                         .alert("Save Trip", isPresented: $presentAlert, actions: {
                             TextField("Enter a title for your trip", text: $title)
                             
-                            Button("Save", action: {
+                            Button("Save") {
                                 tripService.createTrip(trip: Trip(
                                     id: UUID().uuidString,
                                     title: title,
@@ -49,7 +49,7 @@ struct PromptResult: View {
                                     userId: user.uid
                                 ))
                                 saved = true
-                            })
+                            }
                             Button("Cancel", role: .cancel, action: {})
                         }, message: {
                             Text("Please enter a title for your trip")

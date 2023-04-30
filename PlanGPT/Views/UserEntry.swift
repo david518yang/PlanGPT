@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct UserEntry: View {
     @StateObject var apiService = APIService.shared
     @State var chatCompletion: ChatCompletion?
     @State var errorMessage: String?
     @State var days: [Day]?
+    @State var refresh = 0
     
     @State private var isLoading: Bool = false
     @State private var prompt: String = ""
@@ -69,6 +71,7 @@ struct UserEntry: View {
                                 do {
                                     let completion = try await apiService.getCompletion(prompt: "Provide a plan for a road trip from \(startPoint) and \(endDestination). The trip must have exactly \(duration) locations in it. For each place, find one restaurant in the location, and one sightseeing attraction. For each day, follow this structure: { food: String, location: String, sightseeing: String, latitude: Double, longitude: Double } Return only a JSON array of each Day object with no extra spaces. Example response: [{day1},{day2}]")
                                     days = completion
+                                    refresh+=1
                                 } catch APIService.APIErrors.fetchError {
                                     errorMessage = "Error fething data, try again..."
                                 } catch APIService.APIErrors.decodeError {
@@ -85,6 +88,7 @@ struct UserEntry: View {
                         }).disabled(isLoading)
                         
                         
+                        
                         if let error = errorMessage {
                             Text(error).foregroundColor(.red)
                         }
@@ -96,6 +100,7 @@ struct UserEntry: View {
                         }
                     }
                 }
+                .confettiCannon(counter: $refresh, num:1, confettis: [.text("\u{1F697}"), .text("\u{1F5FA}"), .text("\u{1F4CD}")], confettiSize: 30, repetitions: 10, repetitionInterval: 0.1)
             }
             .background(
                 LinearGradient(gradient: Gradient(colors: [.white, .blue, .black]), startPoint: .top, endPoint: .bottom)
