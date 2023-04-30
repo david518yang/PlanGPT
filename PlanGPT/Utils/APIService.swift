@@ -35,7 +35,7 @@ class APIService: ObservableObject {
                     "content": "\(prompt)"
                 ]
             ],
-            "temperature": 0
+            "temperature": 0.2
         ]
         
         do {

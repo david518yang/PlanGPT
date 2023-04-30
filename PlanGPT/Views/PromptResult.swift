@@ -13,6 +13,7 @@ struct PromptResult: View {
     var days: [Day]
     @State var title = ""
     @State private var presentAlert = false
+    @State private var saved = false
     var showButton: Bool
     
     var body: some View {
@@ -31,7 +32,7 @@ struct PromptResult: View {
                             HStack {
                                 Text("Save Trip")
                                     .foregroundColor(.blue)
-                                Image(systemName: "bookmark")
+                                Image(systemName: saved ? "bookmark.fill" : "bookmark")
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
                                     .frame(width:20)
@@ -47,6 +48,7 @@ struct PromptResult: View {
                                     days: days,
                                     userId: user.uid
                                 ))
+                                saved = true
                             })
                             Button("Cancel", role: .cancel, action: {})
                         }, message: {

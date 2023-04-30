@@ -49,19 +49,17 @@ class PlanGPTTrip: ObservableObject {
         
         return try querySnapshot.documents.map {
             guard let title = $0.get("title") as? String,
-                  let days = $0.get("days") as? [[String:String]] else {
+                  let days = $0.get("days") as? [[String:Any]] else {
                 throw TripServiceError.mismatchedDocumentError
             }
             
             let daysArray = days.map { dayDictionary in
-                let latitude = Double(dayDictionary["latitude"] ?? "")
-                let longitude = Double(dayDictionary["longitude"] ?? "")
+                let latitude = dayDictionary["latitude"]
+                let longitude = dayDictionary["longitude"]
                 
-                return Day(day: 1, food: dayDictionary["food"] ?? "", location: dayDictionary["location"] ?? "", sightseeing: dayDictionary["sightseeing"] ?? "", latitude: latitude ?? 0.0, longitude: longitude ?? 0.0)
+                return Day(day: 1, food: dayDictionary["food"] as! String, location: dayDictionary["location"] as! String, sightseeing: dayDictionary["sightseeing"] as! String, latitude: latitude as! Double, longitude: longitude as! Double)
             }
-            
-            print(daysArray)
-                        
+        
             return Trip(
                 id: $0.documentID,
                 title: title,
