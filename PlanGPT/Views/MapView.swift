@@ -41,7 +41,7 @@ struct PlaceAnnotationView: View {
 struct MapView: View {
     var days: [Day]
     
-    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 44.967243, longitude: -103.771556), span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30))
+    @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 39.8712, longitude: -103.771556), span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30))
     
     var body: some View {
         let locations = populateLocations(days: days)
@@ -52,6 +52,15 @@ struct MapView: View {
             }
         }
             .frame(height: 200)
+            .onAppear {
+                let latitudeArray = days.map { day in
+                    return day.latitude
+                }
+                let longitudeArray = days.map { day in
+                    return day.longitude
+                }
+                mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitudeArray.reduce(0, +)/Double(latitudeArray.count), longitude: longitudeArray.reduce(0, +)/Double(longitudeArray.count)), span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30))
+                }
     }
 }
 
@@ -64,6 +73,6 @@ func populateLocations (days: [Day]) -> [Location] {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        MapView(days: [Day(day:0,food:"food",location:"location",sightseeing:"sightseeing", latitude: 34.1017, longitude: 118.3403)])
+        MapView(days: [Day(day:0,food:"food",location:"location",sightseeing:"sightseeing", latitude: 34.1017, longitude: -118.3403)])
     }
 }
