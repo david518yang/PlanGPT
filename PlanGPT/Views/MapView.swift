@@ -40,48 +40,51 @@ struct PlaceAnnotationView: View {
 
 struct MapView: View {
     var days: [Day]
-    
     @State private var mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 39.8712, longitude: -103.771556), span: MKCoordinateSpan(latitudeDelta: 30, longitudeDelta: 30))
+    @State private var locations: [Location] = []
     
     var body: some View {
-        let locations = populateLocations(days: days)
-        
-        Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
+        Map(coordinateRegion: Binding<MKCoordinateRegion>(
+            // This binding is a workaround for a known bug found on Stack overflow
+            get: { mapRegion },
+            set: { _ in }
+        ), annotationItems: locations) { location in
             MapAnnotation(coordinate: location.coordinate) {
                 PlaceAnnotationView(name: location.name)
             }
         }
-            .frame(height: 200)
-            .onAppear {
-                var latitudeRange: Double
-                var longitudeRange: Double
-                let latitudeArray = days.map { day in
-                    return day.latitude
-                }
-                let longitudeArray = days.map { day in
-                    return day.longitude
-                }
-                
-                if let latitudeMax = latitudeArray.max(), let latitudeMin = latitudeArray.min() {
-                    latitudeRange = latitudeMax - latitudeMin
-                    
-                    if let longitudeMax = longitudeArray.max(), let longitudeMin = longitudeArray.min() {
-                        longitudeRange = longitudeMax - longitudeMin
-                        
-                        mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitudeArray.reduce(0, +)/Double(latitudeArray.count), longitude: longitudeArray.reduce(0, +)/Double(longitudeArray.count)), span: MKCoordinateSpan(latitudeDelta: latitudeRange+5, longitudeDelta: longitudeRange+5))
-                        }
-                    }
-                }
-                
-                
+        .frame(height: 200)
+        .onAppear {
+            setupLocationsAndMapRegion()
+        }
     }
-}
-
-func populateLocations (days: [Day]) -> [Location] {
-    return days.map { day in
-        return Location(name:day.location,
-                        coordinate: CLLocationCoordinate2D(latitude:day.latitude, longitude: day.longitude))
+    
+    private func setupLocationsAndMapRegion() {
+        let latitudeArray = days.map { day in
+            return day.latitude
+        }
+        let longitudeArray = days.map { day in
+            return day.longitude
+        }
+        
+        if let latitudeMax = latitudeArray.max(), let latitudeMin = latitudeArray.min(),
+           let longitudeMax = longitudeArray.max(), let longitudeMin = longitudeArray.min() {
+            let latitudeRange = latitudeMax - latitudeMin
+            let longitudeRange = longitudeMax - longitudeMin
+            
+            mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitudeArray.reduce(0, +)/Double(latitudeArray.count), longitude: longitudeArray.reduce(0, +)/Double(longitudeArray.count)), span: MKCoordinateSpan(latitudeDelta: latitudeRange+5, longitudeDelta: longitudeRange+5))
+            
+            locations = populateLocations(days: days)
+        }
     }
+    
+    private func populateLocations (days: [Day]) -> [Location] {
+        return days.map { day in
+            return Location(name:day.location,
+                            coordinate: CLLocationCoordinate2D(latitude:day.latitude, longitude: day.longitude))
+        }
+    }
+    
 }
 
 struct MapView_Previews: PreviewProvider {
