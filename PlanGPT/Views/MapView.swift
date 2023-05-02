@@ -44,11 +44,7 @@ struct MapView: View {
     @State private var locations: [Location] = []
     
     var body: some View {
-        Map(coordinateRegion: Binding<MKCoordinateRegion>(
-            // This binding is a workaround for a known bug found on Stack overflow
-            get: { mapRegion },
-            set: { _ in }
-        ), annotationItems: locations) { location in
+        Map(coordinateRegion: $mapRegion, annotationItems: locations) { location in
             MapAnnotation(coordinate: location.coordinate) {
                 PlaceAnnotationView(name: location.name)
             }
@@ -72,7 +68,7 @@ struct MapView: View {
             let latitudeRange = latitudeMax - latitudeMin
             let longitudeRange = longitudeMax - longitudeMin
             
-            mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitudeArray.reduce(0, +)/Double(latitudeArray.count), longitude: longitudeArray.reduce(0, +)/Double(longitudeArray.count)), span: MKCoordinateSpan(latitudeDelta: latitudeRange+5, longitudeDelta: longitudeRange+5))
+            mapRegion = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: latitudeArray.reduce(0, +)/Double(latitudeArray.count), longitude: longitudeArray.reduce(0, +)/Double(longitudeArray.count)), span: MKCoordinateSpan(latitudeDelta: latitudeRange+10, longitudeDelta: longitudeRange+10))
             
             locations = populateLocations(days: days)
         }
