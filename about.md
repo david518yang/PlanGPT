@@ -56,3 +56,9 @@ https://user-images.githubusercontent.com/56782878/235765472-c2c83646-958a-4a0d-
 - There is a warning about modifying the state during view update which is casued by the MapView.swift file when updating the mapRegion. We researched it and couldn't find a reliable fix, and it also doesn't occur on all of our laptops so we are putting it as a known bug (even though its just a warning).
 
 - This isn't really a bug but the AI will sometimes plan a route that goes off too far in one direction that doesn't always make sense. We have spent hours trying to engineer the prompt and we have it as best as we can. This is to be expected when dealing with generative models.
+
+
+### Acknowledgements
+- Professor Dondi
+- OpenAI
+- HackingWithSwift
