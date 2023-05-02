@@ -69,7 +69,7 @@ struct UserEntry: View {
                                     return
                                 }
                                 do {
-                                    let completion = try await apiService.getCompletion(prompt: "Provide a plan for a road trip from \(startPoint) and \(endDestination). The trip must have exactly \(duration) locations in it. For each place, find one restaurant in the location, and one sightseeing attraction. For each day, follow this structure: { food: String, location: String, sightseeing: String, latitude: Double, longitude: Double } Return only a JSON array of each Day object with no extra spaces. Example response: [{day1},{day2}]")
+                                    let completion = try await apiService.getCompletion(prompt: "Provide a plan for a road trip from \(startPoint) and \(endDestination). The first stop must be \(startPoint) and the last stop must be \(endDestination). The trip must have exactly \(duration) locations in it. For each place, find one notable restaurant in the location, and one sightseeing attraction. For each day, follow this structure: { food: String, location: String, sightseeing: String, latitude: Double, longitude: Double } Return only a JSON array of each Day object with no extra spaces. Example response: [{day1},{day2}]")
                                     days = completion
                                     refresh+=1
                                 } catch APIService.APIErrors.fetchError {
