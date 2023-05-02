@@ -49,3 +49,10 @@ https://user-images.githubusercontent.com/56782878/235765472-c2c83646-958a-4a0d-
 - Utilized Apple's MapKit to provide a visual display of the route to the user with markers along the way
 
 
+### Known Bugs
+
+- Since we are asking OpenAI to return JSON data, sometimes it diverges from the prompt or says that it is unable to do the task. This is rare, but in case it happens we want it to be known that we are aware of it. This will likely result in a parse error which we handle and display to the user.
+
+- There is a warning about modifying the state during view update which is casued by the MapView.swift file when updating the mapRegion. We researched it and couldn't find a reliable fix, and it also doesn't occur on all of our laptops so we are putting it as a known bug (even though its just a warning).
+
+- This isn't really a bug but the AI will sometimes plan a route that goes off too far in one direction that doesn't always make sense. We have spent hours trying to engineer the prompt and we have it as best as we can. This is to be expected when dealing with generative models.
