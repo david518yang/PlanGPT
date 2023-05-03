@@ -18,6 +18,8 @@ Kevin Gager<br />
 - Firebase auth expert
 - Prompt Engineer
 
+Note: Due to a GitHub classroom login error, Garrett Miller is shown to be a part of the group. This is a mistake and Kevin is actually supposed to be there instead.
+
 Matthew Martel<br />
 - SwiftUI developer
 - Graphic designer for App Icon
