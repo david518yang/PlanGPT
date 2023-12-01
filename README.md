@@ -1,6 +1,8 @@
 # PlanGPT: Your AI-Powered Travel Companion
 PlanGPT, a SwiftUI app, uses OpenAI's GPT-3.5-turbo to create personalized travel itineraries. Input your destinations and trip length, and get a detailed plan with an interactive map, daily local food and sightseeing suggestions, all savable in a Google Firebase Firestore database. Planning your next journey has never been easier!
 
+![plangpt](https://github.com/david518yang/PlanGPT/assets/56782878/c04bfe58-1709-49ac-883f-641fd55efefd)
+
 ## Description
 
 PlanGPT is an innovative travel itinerary application, built using SwiftUI, that leverages the power of OpenAI's GPT-3.5-turbo model to create personalized trip plans. Designed for both casual tourists and avid travelers, this app simplifies the process of planning a journey from start to finish
